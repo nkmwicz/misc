@@ -23,7 +23,7 @@ const readJson = async () => {
           rents,
           rents_lire,
           rents_scudi,
-          rents_in_scudi = rents_lire ? rents_lire * 7 : rents_scudi,
+          rents_in_scudi = rents_lire ? rents_lire / 7 : rents_scudi,
           value_,
           M,
           F,
@@ -167,7 +167,7 @@ const readJson = async () => {
       }
     })
     try {
-      const file = fs.writeFile('florence1561v2.json', JSON.stringify(newArray, null, 2));
+      const file = fs.writeFile('florence1561v3.json', JSON.stringify(newArray, null, 2));
       await file;
     } catch (err) { console.log(err) }
   } catch (err) {
